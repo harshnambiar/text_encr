@@ -7,16 +7,22 @@ console.log("Initial Text: ".concat(message));
 
 
 
-var key_full = ((Math.random() * 1000000000).toString()).concat((Math.random() * 1000000000).toString()).concat((Math.random() * 1000000000).toString());
+var key_full = (Math.floor((Math.random() * 10000000000)).toString()).concat((Math.floor(Math.random() * 10000000000)).toString()).concat((Math.floor(Math.random() * 10000000000)).toString());
 
-var ct = encrypt(message, key_full);
-var pt = decrypt(ct, key_full);
+var codes = [Math.floor(Math.random()*3), Math.floor(Math.random()*3), Math.floor(Math.random()*3)];
+
+
+var ct = encrypt(message, key_full, codes);
+var pt = decrypt(ct, key_full, codes);
 
 
 
 
 
 console.log("Final Decrypted Text: ".concat(pt));
+
+
+
 
 
 
