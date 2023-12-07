@@ -4,10 +4,14 @@ var message = "This is a sample app to explain how packeting and encryption work
 console.log("Initial Text: ".concat(message));
 
 
+var key_full = "";
+while (key_full.length < 186) {
+    key_full = key_full.concat((Math.floor((Math.random() * 99999999999)).toString()));
+}
+key_full = key_full.substring(0, 186);
 
-
-
-var key_full = (Math.floor((Math.random() * 10000000000)).toString()).concat((Math.floor(Math.random() * 10000000000)).toString()).concat((Math.floor(Math.random() * 10000000000)).toString());
+//console.log(key_full.length);
+//console.log(key_full);
 
 var codes = [Math.floor(Math.random()*3), Math.floor(Math.random()*3), Math.floor(Math.random()*3)];
 

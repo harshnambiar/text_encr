@@ -22,7 +22,7 @@ export function encrypt(message, key_full, codes) {
     }
 
     var message_packets = stringToChanks(message, plen);
-    var key = stringToChanks(key_full, 9);
+    var key = stringToChanks(key_full, key_full.length/3);
 
     var i  = 0;
     var ct = [];
@@ -50,7 +50,7 @@ export function encrypt(message, key_full, codes) {
 export function decrypt(ct, key_full, codes) {
     var i = 0;
     var pt = [];
-    var key = stringToChanks(key_full, 9);
+    var key = stringToChanks(key_full, key_full.length/3);
 
     while (i < 3) {
         if (codes[i] == 0){
